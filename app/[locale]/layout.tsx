@@ -55,9 +55,10 @@ export default async function LocaleLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
       </head>
-      <body className="min-h-screen pb-16 md:pb-0 pt-14 md:pt-0">
+      <body className="min-h-screen pb-16 md:pb-0">
         <NextIntlClientProvider messages={messages}>
           <MobileHeader />
+          <div className="h-14 md:hidden" />
           <DesktopNav />
           <div className="min-h-screen md:pt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

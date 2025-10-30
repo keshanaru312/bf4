@@ -9,6 +9,8 @@ import { LanguageToggle } from './LanguageToggle';
 export function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const params = useParams();
   const currentLocale = (params.locale as string) || 'en';
 
@@ -24,6 +26,27 @@ export function MobileHeader() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show header when scrolling up or at top
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        setIsVisible(true);
+      } 
+      // Hide header when scrolling down (after scrolling past 10px)
+      else if (currentScrollY > lastScrollY && currentScrollY > 10) {
+        setIsVisible(false);
+        setIsMenuOpen(false); // Close menu when hiding header
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
@@ -32,7 +55,11 @@ export function MobileHeader() {
   };
 
   return (
-    <header className="md:hidden fixed top-0 left-0 right-0 z-40 bg-[#05060a]/95 backdrop-blur-xl border-b border-white/10">
+    <header 
+      className={`md:hidden fixed top-0 left-0 right-0 z-40 bg-[#05060a]/95 backdrop-blur-xl border-b border-white/10 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
