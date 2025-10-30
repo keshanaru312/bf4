@@ -125,3 +125,25 @@ h1, h2, h3, h4, h5, h6 {
 button, a {
   transition: all 0.2s ease;
 }
+
+/* Article content styles */
+.article-content h2 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-content p {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.article-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}

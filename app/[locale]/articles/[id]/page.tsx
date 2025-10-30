@@ -2,6 +2,8 @@ import { Link } from '@/i18n/routing';
 import { ArrowLeftIcon, ClockIcon, ShareIcon } from '@heroicons/react/24/outline';
 import { getTranslations } from 'next-intl/server';
 
+export const dynamic = 'force-static';
+
 const articleData: { [key: string]: any } = {
   '1': {
     category: 'investing',
@@ -61,6 +63,18 @@ const articleData: { [key: string]: any } = {
   },
 };
 
+export async function generateStaticParams() {
+  const locales = ['en', 'ms', 'zh'];
+  const articleIds = Object.keys(articleData);
+  
+  return locales.flatMap((locale) =>
+    articleIds.map((id) => ({
+      locale,
+      id,
+    }))
+  );
+}
+
 export default async function ArticlePage({ 
   params 
 }: { 
@@ -118,32 +132,7 @@ export default async function ArticlePage({
           </div>
 
           {/* Article Body */}
-          <div 
-            className="prose prose-invert max-w-none"
-            style={{
-              color: 'var(--text-primary)',
-            }}
-          >
-            <style jsx>{`
-              .prose :global(h2) {
-                font-family: 'Space Grotesk', sans-serif;
-                font-size: 1.5rem;
-                font-weight: 600;
-                color: var(--text-primary);
-                margin-top: 2rem;
-                margin-bottom: 1rem;
-              }
-              .prose :global(p) {
-                font-family: 'Inter', sans-serif;
-                color: var(--text-secondary);
-                line-height: 1.8;
-                margin-bottom: 1.25rem;
-              }
-              .prose :global(strong) {
-                color: var(--text-primary);
-                font-weight: 600;
-              }
-            `}</style>
+          <div className="article-content max-w-none">
             <div dangerouslySetInnerHTML={{ __html: article.content }} />
           </div>
 

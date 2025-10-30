@@ -8,6 +8,8 @@ import { BottomNav } from '@/components/BottomNav';
 import { DesktopNav } from '@/components/DesktopNav';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-static';
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space-grotesk',

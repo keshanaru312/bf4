@@ -2,6 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { ArrowLeftIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
+export const dynamic = 'force-static';
+
 const topicContent = {
   budgeting: {
     sections: [
@@ -166,6 +168,18 @@ const topicContent = {
 };
 
 type TopicId = keyof typeof topicContent;
+
+export async function generateStaticParams() {
+  const locales = ['en', 'ms', 'zh'];
+  const topics = Object.keys(topicContent);
+  
+  return locales.flatMap((locale) =>
+    topics.map((topic) => ({
+      locale,
+      topic,
+    }))
+  );
+}
 
 export default async function TopicPage({ 
   params 
