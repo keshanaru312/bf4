@@ -20,7 +20,7 @@ const calculatorIcons = {
 
 export default async function CalculatorsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations('calculators');
+  const t = await getTranslations({ locale, namespace: 'calculators' });
 
   const calculators = [
     { id: 'budget', icon: calculatorIcons.budget, color: 'from-green-400 to-emerald-500' },
@@ -53,7 +53,7 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
             return (
               <Link
                 key={calculator.id}
-                href={`/${locale}/calculators/${calculator.id}`}
+                href={`/calculators/${calculator.id}`}
                 className="block bg-[var(--surface)] rounded-2xl p-6 border border-[var(--border)] hover:border-[var(--accent)] transition-all hover:scale-[1.05] active:scale-[0.95]"
               >
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${calculator.color} flex items-center justify-center mb-4`}>

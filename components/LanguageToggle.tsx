@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import { useParams } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import { LanguageIcon, CheckIcon } from '@heroicons/react/24/outline';
 
@@ -12,13 +13,24 @@ const languages = [
 ];
 
 export function LanguageToggle() {
-  const locale = useLocale();
+  const params = useParams();
+  const localeFromParams = params.locale as string;
+  const locale = localeFromParams || useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const currentLanguage = languages.find((lang) => lang.code === locale);
+
+  // Debug logging
+  console.log('🌐 LanguageToggle - Current State:', {
+    locale,
+    localeFromParams,
+    pathname,
+    fullURL: typeof window !== 'undefined' ? window.location.pathname : 'SSR',
+    currentLanguage: currentLanguage?.name
+  });
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -32,7 +44,24 @@ export function LanguageToggle() {
   }, []);
 
   const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+    // Get the current path from the browser and remove the locale prefix
+    const currentPath = window.location.pathname;
+    // Remove the current locale prefix (e.g., /en/learn -> /learn)
+    const pathWithoutLocale = currentPath.replace(/^\/(en|ms|zh)(\/|$)/, '/');
+    // Ensure it starts with /
+    const cleanPath = pathWithoutLocale.startsWith('/') ? pathWithoutLocale : `/${pathWithoutLocale}`;
+    
+    console.log('🔄 Language Change:', {
+      from: locale,
+      to: newLocale,
+      currentPath,
+      pathWithoutLocale,
+      cleanPath,
+      willNavigateTo: `/${newLocale}${cleanPath}`
+    });
+    
+    // Navigate to the new locale with the clean path
+    router.push(cleanPath === '/' ? '/' : cleanPath, { locale: newLocale });
     setIsOpen(false);
   };
 

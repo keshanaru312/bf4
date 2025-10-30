@@ -1,14 +1,19 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/routing';
+import { useParams } from 'next/navigation';
 import { BookOpenIcon, NewspaperIcon, CalculatorIcon, HomeIcon } from '@heroicons/react/24/outline';
 import { LanguageToggle } from './LanguageToggle';
 
 export function DesktopNav() {
   const t = useTranslations('navigation');
   const pathname = usePathname();
+  const params = useParams();
+  const currentLocale = (params.locale as string) || 'en';
+
+  // Debug logging
+  console.log('🖥️ DesktopNav - pathname:', pathname, 'currentLocale:', currentLocale);
 
   const navItems = [
     { href: '/', label: t('home'), icon: HomeIcon },
@@ -19,9 +24,9 @@ export function DesktopNav() {
 
   const isActive = (href: string) => {
     if (href === '/') {
-      return pathname === '/' || pathname === '/en' || pathname === '/ms' || pathname === '/zh';
+      return pathname === '/';
     }
-    return pathname.includes(href);
+    return pathname.startsWith(href);
   };
 
   return (
@@ -29,7 +34,7 @@ export function DesktopNav() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" locale={currentLocale} className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center font-heading font-bold text-black text-xl">
               B
             </div>
@@ -48,6 +53,7 @@ export function DesktopNav() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  locale={currentLocale}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     active
                       ? 'bg-[var(--accent)]/20 text-[var(--accent)]'

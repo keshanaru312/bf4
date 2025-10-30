@@ -6,6 +6,7 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import '../globals.css';
 import { BottomNav } from '@/components/BottomNav';
 import { DesktopNav } from '@/components/DesktopNav';
+import { MobileHeader } from '@/components/MobileHeader';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
@@ -47,18 +48,21 @@ export default async function LocaleLayout({
 
   // Providing all messages to the client
   // side is the easiest way to get started
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
       </head>
-      <body className="min-h-screen pb-16 md:pb-0">
+      <body className="min-h-screen pb-16 md:pb-0 pt-14 md:pt-0">
         <NextIntlClientProvider messages={messages}>
+          <MobileHeader />
           <DesktopNav />
           <div className="min-h-screen md:pt-20">
-            {children}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {children}
+            </div>
           </div>
           <BottomNav />
         </NextIntlClientProvider>

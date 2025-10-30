@@ -187,7 +187,7 @@ export default async function TopicPage({
   params: Promise<{ locale: string; topic: string }> 
 }) {
   const { locale, topic } = await params;
-  const t = await getTranslations('learn');
+  const t = await getTranslations({ locale, namespace: 'learn' });
   const tCommon = await getTranslations('common');
 
   const topicData = topicContent[topic as TopicId];
@@ -202,7 +202,7 @@ export default async function TopicPage({
       <div className="px-4 pt-6 pb-4 sticky top-0 bg-gradient-dark z-10 border-b border-[var(--border)]">
         <div className="max-w-md mx-auto">
           <Link 
-            href={`/${locale}/learn`}
+            href="/learn"
             className="inline-flex items-center text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 font-body"
           >
             <ArrowLeftIcon className="w-5 h-5 mr-2" />

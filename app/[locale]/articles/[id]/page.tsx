@@ -81,8 +81,8 @@ export default async function ArticlePage({
   params: Promise<{ locale: string; id: string }> 
 }) {
   const { locale, id } = await params;
-  const t = await getTranslations('articles');
-  const tCommon = await getTranslations('common');
+  const t = await getTranslations({ locale, namespace: 'articles' });
+  const tCommon = await getTranslations({ locale, namespace: 'common' });
 
   const article = articleData[id] || articleData['1'];
 

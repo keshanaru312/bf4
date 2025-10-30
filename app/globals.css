@@ -22,7 +22,7 @@
     --surface-secondary: rgba(42, 47, 58, 0.95);
     --border: rgba(120, 130, 150, 0.25);
     --text-primary: #f2f6ff;
-    --text-secondary: #b0b8cc;
+    --text-secondary: #cbd5e1;
     --accent: #b8ff3c;
     --accent-secondary: #1bb5ff;
   }
@@ -35,7 +35,7 @@
   --surface-secondary: rgba(42, 47, 58, 0.95);
   --border: rgba(120, 130, 150, 0.25);
   --text-primary: #f2f6ff;
-  --text-secondary: #b0b8cc;
+  --text-secondary: #cbd5e1;
   --accent: #b8ff3c;
   --accent-secondary: #1bb5ff;
 }

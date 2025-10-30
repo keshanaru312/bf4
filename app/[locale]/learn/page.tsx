@@ -24,7 +24,7 @@ const topicIcons = {
 
 export default async function LearnPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations('learn');
+  const t = await getTranslations({ locale, namespace: 'learn' });
 
   const topics = [
     { id: 'budgeting', icon: topicIcons.budgeting, color: 'from-green-400 to-emerald-500' },
@@ -74,7 +74,7 @@ export default async function LearnPage({ params }: { params: Promise<{ locale: 
             return (
               <Link
                 key={topic.id}
-                href={`/${locale}/learn/${topic.id}`}
+                href={`/learn/${topic.id}`}
                 className="block bg-[var(--surface)] rounded-xl p-5 border border-[var(--border)] hover:border-[var(--accent)] transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="flex items-start space-x-4">

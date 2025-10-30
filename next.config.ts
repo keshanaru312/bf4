@@ -4,7 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // output: 'export', // Commented out for development - uncomment for production build
   images: {
     unoptimized: true,
   },
