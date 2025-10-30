@@ -1,6 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BelajarFinance 💰
 
-## Getting Started
+A mobile-first financial literacy web app for Malaysian young adults built with Next.js 16.
+
+## 🌟 Features
+
+### 1. **Learn Finance** 📚
+
+Journey through 8 essential financial topics:
+
+- Budgeting Basics
+- Saving Strategies
+- Introduction to Investing
+- Managing Debt
+- Insurance Essentials
+- Retirement Planning (EPF)
+- Tax Basics
+- Property Investment
+
+### 2. **Articles** 📰
+
+Expert insights on personal finance with filterable categories
+
+### 3. **Financial Calculators** 🧮
+
+Interactive tools:
+
+- Budget Planner (50/30/20 Rule)
+- Savings Goal Calculator
+- Loan Calculator
+- EPF Retirement Calculator
+- Emergency Fund Calculator
+
+## 🎨 Design System
+
+### Theme
+
+- **Dark Mode**: Gradient background `#05060a → #071f1b`
+- **Accent Colors**: Lime `#b8ff3c`, Blue `#1bb5ff`
+- **Typography**: Space Grotesk (headings), Inter (body)
+
+## 🌍 Internationalization
+
+Supports English (en), Malay (ms), and Chinese (zh) using `next-intl`.
+
+## 🚀 Getting Started
 
 First, run the development server:
 

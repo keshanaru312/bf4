@@ -1,0 +1,127 @@
+{
+  "navigation": {
+    "home": "Laman Utama",
+    "learn": "Belajar",
+    "articles": "Artikel",
+    "calculators": "Kalkulator",
+    "selectLanguage": "Pilih Bahasa"
+  },
+  "nav": {
+    "home": "Laman Utama",
+    "learn": "Belajar",
+    "articles": "Artikel",
+    "calculators": "Kalkulator"
+  },
+  "home": {
+    "title": "BelajarFinance",
+    "subtitle": "Literasi Kewangan untuk Golongan Muda Malaysia",
+    "tagline": "Kuasai wang anda, bentuk masa depan anda",
+    "cta": "Mula Belajar",
+    "features": {
+      "learn": {
+        "title": "Belajar Kewangan",
+        "description": "Perjalanan melalui topik kewangan penting"
+      },
+      "articles": {
+        "title": "Artikel",
+        "description": "Baca pandangan pakar kewangan"
+      },
+      "calculators": {
+        "title": "Kalkulator",
+        "description": "Alat pintar untuk keputusan kewangan"
+      }
+    }
+  },
+  "learn": {
+    "title": "Belajar Kewangan",
+    "subtitle": "Perjalanan anda ke penguasaan kewangan",
+    "progress": "Kemajuan",
+    "topics": {
+      "budgeting": {
+        "title": "Asas Belanjawan",
+        "description": "Kuasai seni mengurus wang anda"
+      },
+      "saving": {
+        "title": "Strategi Simpanan",
+        "description": "Bina dana kecemasan dan simpan dengan bijak"
+      },
+      "investing": {
+        "title": "Pengenalan Pelaburan",
+        "description": "Kembangkan kekayaan melalui pelaburan"
+      },
+      "debt": {
+        "title": "Mengurus Hutang",
+        "description": "Ambil kawalan pinjaman dan kredit"
+      },
+      "insurance": {
+        "title": "Asas Insurans",
+        "description": "Lindungi diri dan aset anda"
+      },
+      "retirement": {
+        "title": "Perancangan Persaraan",
+        "description": "Rancang masa depan dengan KWSP dan lain-lain"
+      },
+      "tax": {
+        "title": "Asas Cukai",
+        "description": "Fahami sistem cukai Malaysia"
+      },
+      "property": {
+        "title": "Pelaburan Hartanah",
+        "description": "Navigasi pasaran hartanah"
+      }
+    }
+  },
+  "articles": {
+    "title": "Artikel",
+    "subtitle": "Pandangan pakar tentang kewangan peribadi",
+    "categories": {
+      "all": "Semua",
+      "investing": "Pelaburan",
+      "saving": "Simpanan",
+      "budgeting": "Belanjawan",
+      "career": "Kerjaya",
+      "tax": "Cukai"
+    },
+    "readMore": "Baca Lagi",
+    "minRead": "minit bacaan"
+  },
+  "calculators": {
+    "title": "Kalkulator Kewangan",
+    "subtitle": "Alat pintar untuk keputusan lebih baik",
+    "tools": {
+      "budget": {
+        "title": "Perancang Belanjawan",
+        "description": "Jejak pendapatan dan perbelanjaan"
+      },
+      "savings": {
+        "title": "Kalkulator Matlamat Simpanan",
+        "description": "Rancang perjalanan simpanan anda"
+      },
+      "loan": {
+        "title": "Kalkulator Pinjaman",
+        "description": "Kira bayaran bulanan"
+      },
+      "epf": {
+        "title": "Kalkulator KWSP",
+        "description": "Unjurkan simpanan persaraan anda"
+      },
+      "emergency": {
+        "title": "Dana Kecemasan",
+        "description": "Kira jaring keselamatan anda"
+      },
+      "investment": {
+        "title": "Pulangan Pelaburan",
+        "description": "Anggarkan pertumbuhan pelaburan"
+      }
+    }
+  },
+  "common": {
+    "getStarted": "Mula",
+    "learnMore": "Ketahui Lebih",
+    "back": "Kembali",
+    "next": "Seterusnya",
+    "complete": "Selesai",
+    "inProgress": "Dalam Proses",
+    "notStarted": "Belum Bermula"
+  }
+}

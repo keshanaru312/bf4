@@ -1,0 +1,127 @@
+{
+  "navigation": {
+    "home": "Home",
+    "learn": "Learn",
+    "articles": "Articles",
+    "calculators": "Calculators",
+    "selectLanguage": "Select Language"
+  },
+  "nav": {
+    "home": "Home",
+    "learn": "Learn",
+    "articles": "Articles",
+    "calculators": "Calculators"
+  },
+  "home": {
+    "title": "BelajarFinance",
+    "subtitle": "Financial Literacy for Malaysian Young Adults",
+    "tagline": "Master your money, shape your future",
+    "cta": "Start Learning",
+    "features": {
+      "learn": {
+        "title": "Learn Finance",
+        "description": "Journey through essential financial topics"
+      },
+      "articles": {
+        "title": "Articles",
+        "description": "Read expert financial insights"
+      },
+      "calculators": {
+        "title": "Calculators",
+        "description": "Smart tools for financial decisions"
+      }
+    }
+  },
+  "learn": {
+    "title": "Learn Finance",
+    "subtitle": "Your journey to financial mastery",
+    "progress": "Progress",
+    "topics": {
+      "budgeting": {
+        "title": "Budgeting Basics",
+        "description": "Master the art of managing your money"
+      },
+      "saving": {
+        "title": "Saving Strategies",
+        "description": "Build your emergency fund and save smart"
+      },
+      "investing": {
+        "title": "Introduction to Investing",
+        "description": "Grow your wealth through investments"
+      },
+      "debt": {
+        "title": "Managing Debt",
+        "description": "Take control of loans and credit"
+      },
+      "insurance": {
+        "title": "Insurance Essentials",
+        "description": "Protect yourself and your assets"
+      },
+      "retirement": {
+        "title": "Retirement Planning",
+        "description": "Plan for your future with EPF and more"
+      },
+      "tax": {
+        "title": "Tax Basics",
+        "description": "Understand Malaysian tax system"
+      },
+      "property": {
+        "title": "Property Investment",
+        "description": "Navigate the property market"
+      }
+    }
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Expert insights on personal finance",
+    "categories": {
+      "all": "All",
+      "investing": "Investing",
+      "saving": "Saving",
+      "budgeting": "Budgeting",
+      "career": "Career",
+      "tax": "Tax"
+    },
+    "readMore": "Read More",
+    "minRead": "min read"
+  },
+  "calculators": {
+    "title": "Financial Calculators",
+    "subtitle": "Smart tools for better decisions",
+    "tools": {
+      "budget": {
+        "title": "Budget Planner",
+        "description": "Track income and expenses"
+      },
+      "savings": {
+        "title": "Savings Goal Calculator",
+        "description": "Plan your savings journey"
+      },
+      "loan": {
+        "title": "Loan Calculator",
+        "description": "Calculate monthly payments"
+      },
+      "epf": {
+        "title": "EPF Calculator",
+        "description": "Project your retirement savings"
+      },
+      "emergency": {
+        "title": "Emergency Fund",
+        "description": "Calculate your safety net"
+      },
+      "investment": {
+        "title": "Investment Return",
+        "description": "Estimate investment growth"
+      }
+    }
+  },
+  "common": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "back": "Back",
+    "next": "Next",
+    "complete": "Complete",
+    "inProgress": "In Progress",
+    "notStarted": "Not Started"
+  }
+}
