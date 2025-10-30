@@ -56,8 +56,12 @@ export function MobileHeader() {
 
   return (
     <header 
-      className={`md:hidden fixed top-0 left-0 right-0 z-40 bg-[#05060a]/95 backdrop-blur-xl border-b border-white/10 transition-transform duration-300 ${
+      className={`md:hidden fixed top-0 left-0 right-0 z-40 backdrop-blur-xl border-b transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
+        theme === 'dark' 
+          ? 'bg-[#05060a]/95 border-white/10' 
+          : 'bg-white/95 border-gray-200'
       }`}
     >
       <div className="px-4 py-3">
@@ -67,7 +71,7 @@ export function MobileHeader() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center font-heading font-bold text-black text-lg">
               B
             </div>
-            <span className="font-heading text-lg font-bold text-[var(--text-primary)]">
+            <span className="font-heading text-lg font-bold text-gradient">
               BelajarFinance
             </span>
           </Link>
@@ -88,13 +92,21 @@ export function MobileHeader() {
 
         {/* Dropdown Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-[#05060a]/98 backdrop-blur-xl border-b border-white/10 p-4 space-y-4">
+          <div className={`absolute top-full left-0 right-0 backdrop-blur-xl border-b p-4 space-y-4 ${
+            theme === 'dark'
+              ? 'bg-[#05060a]/98 border-white/10'
+              : 'bg-white/98 border-gray-200'
+          }`}>
             {/* Theme Toggle */}
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-[var(--text-secondary)]">Theme</span>
               <button
                 onClick={toggleTheme}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 border border-white/20 transition-all duration-200"
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-all duration-200 ${
+                  theme === 'dark'
+                    ? 'bg-white/10 hover:bg-white/15 border-white/20'
+                    : 'bg-gray-100 hover:bg-gray-200 border-gray-300'
+                }`}
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
